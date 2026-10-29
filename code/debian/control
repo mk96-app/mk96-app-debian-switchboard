@@ -1,0 +1,15 @@
+Source: mk96-app-debian-switchboard
+Section: gnome
+Priority: optional
+Maintainer: Andrés <132230860+Markes96@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13), python3-pytest
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: mk96-app-debian-switchboard
+Architecture: all
+Depends: ${misc:Depends}, python3-gi, gir1.2-ayatanaappindicator3-0.1
+Description: Applet de bandeja para acciones rápidas de sistema en GNOME
+ Panel de bandeja (AppIndicator) para Ubuntu/GNOME sobre Wayland con acceso
+ directo a audio (salida, mute, mixer por app), luz nocturna, no molestar,
+ perfil de energía, redes wifi guardadas y dispositivos bluetooth emparejados.

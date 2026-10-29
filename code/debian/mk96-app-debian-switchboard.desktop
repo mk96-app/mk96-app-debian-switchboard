@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=MK96 Debian Switchboard
+Comment=Acceso rápido a audio, pantalla, energía, wifi y bluetooth
+Exec=mk96-app-debian-switchboard
+Icon=mk96-app-debian-switchboard
+Terminal=false
+NoDisplay=false
+StartupNotify=false
+Categories=System;Settings;
+X-GNOME-Autostart-enabled=true

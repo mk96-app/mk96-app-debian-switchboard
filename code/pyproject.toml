@@ -1,0 +1,8 @@
+[project]
+name = "mk96-app-debian-switchboard"
+version = "26.10.1"
+description = "Panel rápido de bandeja para acciones que GNOME/Wayland no expone fácilmente"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

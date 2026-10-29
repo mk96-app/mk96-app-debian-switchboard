@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+debian/.debhelper/
+debian/mk96-app-debian-switchboard/
+debian/mk96-app-debian-switchboard.debhelper.log
+debian/mk96-app-debian-switchboard.substvars
+debian/mk96-app-debian-switchboard.postrm.debhelper
+debian/debhelper-build-stamp
+debian/files

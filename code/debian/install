@@ -1,0 +1,4 @@
+mk96_app_debian_switchboard usr/lib/python3/dist-packages/
+debian/mk96-app-debian-switchboard.desktop usr/share/applications/
+debian/icons/mk96-app-debian-switchboard.svg usr/share/icons/hicolor/scalable/apps/
+debian/scripts/mk96-app-debian-switchboard usr/bin/

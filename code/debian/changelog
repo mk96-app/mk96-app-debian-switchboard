@@ -1,0 +1,76 @@
+mk96-app-debian-switchboard (26-10-1) unstable; urgency=medium
+
+  * Primera publicación en GitHub. Sin cambios funcionales respecto a la 2.0.0.
+    Nuevo esquema de versión AA-M-R (año-mes-release). El paquete, el comando y
+    el módulo pasan a llamarse mk96-app-debian-switchboard (antes mk-debian-quickctl).
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 29 Oct 2026 16:22:02 +0100
+
+mk-debian-quickctl (2.0.0) unstable; urgency=medium
+
+  * Rediseño visual del menú de bandeja: ahora son submenús por tema (Audio,
+    Pantalla, Energía y Conectividad) y la etiqueta de cada grupo muestra el
+    estado actual (volumen, luz nocturna/no molestar, perfil y batería, Wi-Fi
+    activa y Bluetooth conectados).
+  * Audio: el menú y el panel se refrescan al instante por eventos de
+    `pactl subscribe` en vez de por temporizador, así que se ven al momento
+    los cascos que se conectan solos, las salidas nuevas y las apps que
+    empiezan o dejan de sonar. El mixer actualiza título, mute y volumen de
+    cada app, y marca las que están en pausa.
+  * Conectividad: cada red Wi-Fi y cada dispositivo Bluetooth tiene submenú
+    con Conectar/Desconectar y Reconectar (apaga y enciende la radio y vuelve
+    a conectar la red o el dispositivo elegidos).
+  * La app gestiona SIGTERM/SIGINT para cerrar limpiamente y no dejar procesos
+    `pactl subscribe` huérfanos.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 00:00:00 +0200
+
+mk-debian-quickctl (1.0.1) unstable; urgency=medium
+
+  * Corregido el panel de audio: tras cerrarlo una vez, ya no se quedaba
+    sin poder reabrirse hasta reiniciar la aplicación. Causa: la ventana
+    se reutilizaba oculta (hide()+present()), y el ítem de menú que la
+    reabre se activa vía AppIndicator/dbusmenu sin un timestamp de evento
+    real, lo que el gestor de ventanas puede bloquear como "focus
+    stealing". Ahora la ventana se destruye al cerrarla y se reconstruye
+    entera en la siguiente apertura.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 04 Aug 2026 00:00:00 +0200
+
+mk-debian-quickctl (1.0.0) unstable; urgency=medium
+
+  * Primera versión estable: renombrado completo a mk-debian-quickctl,
+    icono propio de bandeja y de aplicación, autoarranque configurable por
+    debconf, empaquetado .deb con versionado semver clásico y build
+    reproducible (build.sh -> versions/<versión>/), verificado en un ciclo
+    completo de instalación/actualización/purga.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 23 Jul 2026 14:00:38 +0200
+
+mk-debian-quickctl (0.0.3) unstable; urgency=medium
+
+  * Renombrado el proyecto de "linuxcontroller" a "mk-debian-quickctl"
+    (paquete Python, paquete Debian, binario, .desktop, iconos y APP_ID).
+  * Cambiado el versionado a semver clásico (X.Y.Z), sin sufijo de revisión
+    Debian, ya que el paquete es nativo. Próxima versión estable: 1.0.0.
+  * Pregunta de autoarranque en texto plano ("Si"/"No", sin acentos) para
+    evitar el carácter roto que aparecía en el diálogo whiptail.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 23 Jul 2026 14:00:00 +0200
+
+linuxcontroller (0.1.0-2) unstable; urgency=medium
+
+  * Corrige la plantilla debconf del autoarranque: "_Description" (sintaxis de
+    po-debconf, requiere infraestructura de traducción que no existe) dejaba
+    el campo sin reconocer y el diálogo salía sin texto. Cambiado a
+    "Description" en texto plano.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 23 Jul 2026 13:40:00 +0200
+
+linuxcontroller (0.1.0-1) unstable; urgency=medium
+
+  * Primera versión empaquetada como .deb: applet de bandeja (audio, pantalla,
+    no molestar, energía, wifi, bluetooth), icono propio de bandeja y de
+    aplicación, autoarranque configurable vía debconf en la instalación.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 23 Jul 2026 13:14:55 +0200
